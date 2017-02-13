@@ -1,9 +1,9 @@
-package com.a1zu.xiangyucustomer.base;
+package com.a1zu.xiangyucustomer.interf;
 
 import android.view.View;
 
 /**
- * Description:
+ * Description: fragment基类
  * Creator: Chenqiang
  * Date: 2017/2/13
  */

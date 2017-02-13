@@ -20,7 +20,6 @@ public class ImageLoader {
      * @param type      默认图片类型
      */
     public static synchronized void displayImage(String url, ImageView imageView, int type) {
-
         Glide.with(imageView.getContext())
                 .load(url)
                 .placeholder(getDefaultPic(type))

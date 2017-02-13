@@ -1,6 +1,5 @@
 package com.a1zu.xiangyucustomer.network;
 
-
 import com.a1zu.xiangyucustomer.utils.SPUtils;
 import com.a1zu.xiangyucustomer.utils.SystemInfoUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -25,25 +24,32 @@ import okhttp3.OkHttpClient;
 
 public class HttpHelper {
 
-    private HttpHelper() {
+    private static final HttpHelper sHttpHelper = new HttpHelper();
+    private final OkHttpUtils mOkHttpUtils;
 
+    public static HttpHelper getInstance() {
+        return sHttpHelper;
+    }
+
+    private HttpHelper() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS)
                 .readTimeout(10000L, TimeUnit.MILLISECONDS)
-                .addInterceptor(new LoggerInterceptor("okHttp", true))
+                .addInterceptor(new LoggerInterceptor("okHttp", true))//true:打开log
                 .build();
-        OkHttpUtils.initClient(okHttpClient);
+        mOkHttpUtils = OkHttpUtils.initClient(okHttpClient);
     }
 
     /**
      * get请求
      *
+     * @param obj       请求类
      * @param url       请求地址
      * @param paramList 请求参数，没有传null
      * @param callback  回调
      */
-    public static void get(String url, List<Param> paramList, Callback<String> callback) {
-        GetBuilder getBuilder = OkHttpUtils.get().url(url);
+    public static void get(Object obj, String url, List<Param> paramList, Callback<String> callback) {
+        GetBuilder getBuilder = OkHttpUtils.get().url(url).tag(obj);
         if (!paramList.isEmpty()) {
             for (Param param : paramList) {
                 getBuilder.addParams(param.key, param.value);
@@ -55,14 +61,16 @@ public class HttpHelper {
     /**
      * json方式post请求
      *
+     * @param obj        请求类
      * @param url        请求地址
      * @param JsonString 请求参数
      * @param callback   回调
      */
-    public static void postJson(String url, String JsonString, Callback<String> callback) {
+    public static void postJson(Object obj, String url, String JsonString, Callback<String> callback) {
         OkHttpUtils
                 .postString()
                 .url(url)
+                .tag(obj)
                 .content(JsonString)
                 .mediaType(MediaType.parse("application/json; charset=utf-8"))
                 .build()
@@ -72,12 +80,13 @@ public class HttpHelper {
     /**
      * 普通POST
      *
+     * @param obj       请求类
      * @param url       请求地址
      * @param paramList 请求参数，没有传null
      * @param callback  回调
      */
-    public static void postString(String url, List<Param> paramList, Callback<String> callback) {
-        PostFormBuilder builder = OkHttpUtils.post().url(url);
+    public static void postString(Object obj, String url, List<Param> paramList, Callback<String> callback) {
+        PostFormBuilder builder = OkHttpUtils.post().url(url).tag(obj);
         if (!paramList.isEmpty()) {
             for (Param param : paramList) {
                 builder.addParams(param.key, param.value);
@@ -114,6 +123,12 @@ public class HttpHelper {
                 .url(url)
                 .build()
                 .execute(callback);
+    }
+
+    public void cancelRequest(Object obj) {
+        if (mOkHttpUtils != null) {
+            mOkHttpUtils.cancelTag(obj);
+        }
     }
 
     /**

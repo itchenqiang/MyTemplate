@@ -1,4 +1,4 @@
-package com.a1zu.xiangyucustomer.base;
+package com.a1zu.xiangyucustomer.interf;
 
 /**
  * Description:

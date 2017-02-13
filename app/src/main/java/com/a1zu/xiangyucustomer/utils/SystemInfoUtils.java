@@ -1,8 +1,11 @@
 package com.a1zu.xiangyucustomer.utils;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
@@ -81,6 +84,18 @@ public class SystemInfoUtils {
     public static int getScreenHeight() {
         DisplayMetrics dm = MyApplication.getContext().getResources().getDisplayMetrics();
         return dm.heightPixels;
+    }
+
+    /**
+     * 判断是否有网络
+     *
+     * @return true：有网络
+     */
+    public static boolean hasInternet() {
+        ConnectivityManager cm = (ConnectivityManager) MyApplication.getContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        return info != null && info.isAvailable() && info.isConnected();
     }
 
 }
