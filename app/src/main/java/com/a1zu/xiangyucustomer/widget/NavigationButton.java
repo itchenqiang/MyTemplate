@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.a1zu.xiangyucustomer.R;
 
 /**
- * Description:
+ * Description: 底部单个tab
  * Creator: Chenqiang
  * Date: 2017/2/13
  */
@@ -45,7 +45,6 @@ public class NavigationButton extends FrameLayout {
     private void init() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         inflater.inflate(R.layout.item_navagation, this, true);
-
         mIconView = (ImageView) findViewById(R.id.nav_iv_icon);
         mTitleView = (TextView) findViewById(R.id.nav_tv_title);
         mDot = (TextView) findViewById(R.id.nav_tv_dot);

@@ -15,7 +15,8 @@ import com.a1zu.xiangyucustomer.widget.NavigationButton;
  * Date: 2017/2/13
  */
 
-public class MainActivity extends BaseActivity implements NavigationFragment.OnNavigationReselectListener {
+public class MainActivity extends BaseActivity implements
+        NavigationFragment.OnNavigationReselectListener {
 
     @Override
     protected int getContentView() {
