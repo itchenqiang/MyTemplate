@@ -1,11 +1,13 @@
 package com.a1zu.xiangyucustomer.fragment;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.a1zu.xiangyucustomer.R;
 import com.a1zu.xiangyucustomer.base.BaseFragment;
 import com.a1zu.xiangyucustomer.interf.OnBottomTabReselectListener;
 import com.a1zu.xiangyucustomer.utils.LogUtil;
+import com.a1zu.xiangyucustomer.utils.UIHelper;
 
 /**
  * Description: 我的
@@ -21,7 +23,13 @@ public class MyFragment extends BaseFragment implements OnBottomTabReselectListe
 
     @Override
     public void initView(View view) {
-
+        final TextView mTvLogin = (TextView) view.findViewById(R.id.tv_login);
+        mTvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.showLogin(mContext);
+            }
+        });
     }
 
     @Override

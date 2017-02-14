@@ -3,6 +3,7 @@ package com.a1zu.xiangyucustomer.base;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.a1zu.xiangyucustomer.R;
@@ -42,16 +43,26 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
         }
     };
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getContentView());
-        mContext = this;
-        initView();
-        initData();
-        initListener();
+        if (initBundle(getIntent().getExtras())) {
+            setContentView(getContentView());
+            mContext = this;
+            initTitleBar();
+            initView();
+            initData();
+            initListener();
+        } else {
+            finish();
+        }
     }
+
+    private boolean initBundle(Bundle bundle) {
+        return true;
+    }
+
+    protected abstract void initTitleBar();
 
     /**
      * 设置布局

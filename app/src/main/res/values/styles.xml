@@ -3,6 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <!--标题栏-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -26,6 +27,21 @@
     <style name="wrap_match_view">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--登录注册输入框样式-->
+    <style name="input_login_register">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lay_50</item>
+        <item name="android:layout_marginStart">@dimen/lay_16</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+    <!--登录注册按钮样式-->
+    <style name="btn_login_register">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lay_50</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
 </resources>

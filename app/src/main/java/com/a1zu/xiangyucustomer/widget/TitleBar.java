@@ -28,21 +28,21 @@ public class TitleBar extends FrameLayout {
 
     public TitleBar(Context context) {
         super(context);
-        init(context);
+        init();
     }
 
     public TitleBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        init();
     }
 
     public TitleBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
+        init();
     }
 
-    private void init(Context context) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+    private void init() {
+        LayoutInflater inflater = LayoutInflater.from(getContext());
         inflater.inflate(R.layout.custom_title_bar, this, true);
         mTvLeft = (TextView) findViewById(R.id.tv_left);
         mTvTitle = (TextView) findViewById(R.id.tv_title);

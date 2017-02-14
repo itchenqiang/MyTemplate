@@ -8,7 +8,8 @@
         android:id="@+id/tv_left"
         style="@style/wrap_view"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/lay_16" />
+        android:layout_marginStart="@dimen/lay_16"
+        android:text="返回" />
 
     <TextView
         android:id="@+id/tv_title"
