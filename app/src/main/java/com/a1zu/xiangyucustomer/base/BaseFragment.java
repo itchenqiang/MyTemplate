@@ -31,6 +31,7 @@ public abstract class BaseFragment extends Fragment implements BaseFragmentInter
 
     private ProgressDialog mProgressDialog;
     protected Context mContext;
+    protected LayoutInflater mInflater;
     /**
      * 网络请求回调
      */
@@ -51,7 +52,9 @@ public abstract class BaseFragment extends Fragment implements BaseFragmentInter
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContext = getActivity();
+        mInflater = inflater;
         View view = inflater.inflate(getContentView(), container, false);
+        initTitleBar(view);
         initView(view);
         initData();
         initListener();
@@ -64,6 +67,8 @@ public abstract class BaseFragment extends Fragment implements BaseFragmentInter
      * @return 布局id
      */
     protected abstract int getContentView();
+
+    protected abstract void initTitleBar(View view);
 
     /**
      * 子类实现

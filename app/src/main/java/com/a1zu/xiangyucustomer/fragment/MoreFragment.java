@@ -14,9 +14,15 @@ import com.a1zu.xiangyucustomer.utils.LogUtil;
  */
 
 public class MoreFragment extends BaseFragment implements OnBottomTabReselectListener {
+
     @Override
     protected int getContentView() {
         return R.layout.fragment_more;
+    }
+
+    @Override
+    protected void initTitleBar(View view) {
+
     }
 
     @Override

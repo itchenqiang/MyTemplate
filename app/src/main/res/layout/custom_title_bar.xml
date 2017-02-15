@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="45dp"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/title_bar">
 
     <TextView
         android:id="@+id/tv_left"
         style="@style/wrap_view"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/lay_16"
-        android:text="返回" />
+        android:layout_marginStart="@dimen/lay_16" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -23,12 +22,5 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/lay_16" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/lay_0.5"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/darker_gray" />
-
 
 </RelativeLayout>

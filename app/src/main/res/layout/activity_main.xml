@@ -15,7 +15,7 @@
         android:id="@+id/fg_navigation"
         android:name="com.a1zu.xiangyucustomer.fragment.NavigationFragment"
         android:layout_width="match_parent"
-        android:layout_height="55dp" />
+        android:layout_height="@dimen/lay_48" />
 
 
 </LinearLayout>

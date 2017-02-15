@@ -44,6 +44,11 @@ public class NavigationFragment extends BaseFragment implements View.OnClickList
     }
 
     @Override
+    protected void initTitleBar(View view) {
+
+    }
+
+    @Override
     public void initView(View view) {
         ShapeDrawable lineDrawable = new ShapeDrawable(new BorderShape(new RectF(0, 1, 0, 0)));
         lineDrawable.getPaint().setColor(getResources().getColor(R.color.navigation_divider_color));
@@ -60,15 +65,15 @@ public class NavigationFragment extends BaseFragment implements View.OnClickList
     @Override
     public void initData() {
         super.initData();
-        mNbProduct.init(R.drawable.tab_icon_new,
+        mNbProduct.init(R.drawable.tab_icon_product,
                 R.string.main_tab_name_product,
                 ProductFragment.class);
 
-        mNbMy.init(R.drawable.tab_icon_tweet,
+        mNbMy.init(R.drawable.tab_icon_my,
                 R.string.main_tab_name_my,
                 MyFragment.class);
 
-        mNbMore.init(R.drawable.tab_icon_explore,
+        mNbMore.init(R.drawable.tab_icon_more,
                 R.string.main_tab_name_more,
                 MoreFragment.class);
     }
@@ -85,10 +90,7 @@ public class NavigationFragment extends BaseFragment implements View.OnClickList
         mFragmentManager = fragmentManager;
         mContentId = contentId;
         mOnNavigationReselectListener = listener;
-
-        // do clear
         clearOldFragment();
-        // do select first
         doSelect(mNbProduct);
     }
 

@@ -1,6 +1,5 @@
 package com.a1zu.xiangyucustomer.widget;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
@@ -59,6 +58,15 @@ public class TitleBar extends FrameLayout {
     }
 
     /**
+     * 左侧文字
+     *
+     * @param text text
+     */
+    public void setLeftText(CharSequence text) {
+        mTvLeft.setText(text);
+    }
+
+    /**
      * 右侧更换图标
      *
      * @param id 资源id
@@ -78,10 +86,8 @@ public class TitleBar extends FrameLayout {
 
     /**
      * 左侧点击事件处理
-     *
-     * @param activity activity
      */
-    public void setLeftClickLisener(Activity activity) {
-        activity.finish();
+    public void setLeftClickLisener(OnClickListener listener) {
+        mTvLeft.setOnClickListener(listener);
     }
 }

@@ -22,6 +22,11 @@ public class MyFragment extends BaseFragment implements OnBottomTabReselectListe
     }
 
     @Override
+    protected void initTitleBar(View view) {
+
+    }
+
+    @Override
     public void initView(View view) {
         final TextView mTvLogin = (TextView) view.findViewById(R.id.tv_login);
         mTvLogin.setOnClickListener(new View.OnClickListener() {

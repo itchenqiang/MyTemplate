@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#ddd</color>
-    <color name="colorAccent">@android:color/black</color>
+    <color name="colorPrimaryDark">#3d3d3d</color>
+    <color name="colorAccent">#232324</color>
+    <color name="title_bar">#FFFFFF</color>
     <color name="user_info_message_notice">#E35B5A</color>
     <color name="navigation_divider_color">#c8c7cc</color>
+    <color name="nav_text_normal">#919191</color>
+    <color name="nav_text_pre">#232324</color>
 </resources>
