@@ -29,6 +29,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <!--标题栏字体样式-->
+    <style name="title_bar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
     <!--登录注册输入框样式-->
     <style name="input_login_register">
         <item name="android:layout_width">match_parent</item>

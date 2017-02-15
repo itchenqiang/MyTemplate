@@ -5,15 +5,23 @@
 
     <dimen name="font_10">10sp</dimen>
     <dimen name="font_11">11sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="font_14">14sp</dimen>
     <dimen name="font_15">15sp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="font_17">17sp</dimen>
+    <dimen name="font_18">18sp</dimen>
     <dimen name="font_20">20sp</dimen>
     <dimen name="lay_0.5">0.5dp</dimen>
+    <dimen name="lay_12">12dp</dimen>
     <dimen name="lay_16">16dp</dimen>
     <dimen name="lay_11">11dp</dimen>
     <dimen name="lay_21">21dp</dimen>
     <dimen name="lay_25">25dp</dimen>
     <dimen name="lay_28">28dp</dimen>
+    <dimen name="lay_45">45dp</dimen>
     <dimen name="lay_48">48dp</dimen>
     <dimen name="lay_50">50dp</dimen>
+    <dimen name="lay_320">320dp</dimen>
 
 </resources>
